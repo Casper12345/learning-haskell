@@ -15,7 +15,7 @@ filter (Cons x xs) f = if f x then Cons x (filter xs f) else filter xs f
 
 foldLeft :: List a -> b -> (b -> a -> b) -> b
 foldLeft Nil z _  = z
-foldLeft (Cons x xs) z f = foldLeft xs (f z x) f
+foldLeft (Cons x xs) z f = (foldLeft xs $! f z x) f
 
 foldRight :: List a -> b -> (a -> b -> b) -> b
 foldRight Nil z _ = z

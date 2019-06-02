@@ -3,9 +3,10 @@ import Prelude hiding (map, filter, length, zip, zipWith)
 import Lib
 import List
 import Variables
+import CoderByte
 
 main :: IO ()
-main = print (select "apple") >> print (length [1,2,3,4]) >> print (mean [1,2,3,4]) >> printing
+main = print (select "apple") >> print (length [1,2,3,4]) >> print (mean [1,2,3,4]) >> printing >> print (longest "hello@ there! yes")
 
 printing =
   let l1 = Cons 1 (Cons 2 (Cons 3 (Cons 3 Nil)))
@@ -22,7 +23,6 @@ printing =
       zw = zipWith (*) l1 l2
    in print mm >> print ff >> print fl >> print fr >> print fmi >> print ll >> print fmi >> print fm >> print zp >>
       print zw
-
 
 
 

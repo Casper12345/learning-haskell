@@ -43,3 +43,23 @@ length (_ : xs) = 1 + length xs
 mean :: [Int] -> Double
 mean n = fromIntegral (sum n) / fromIntegral (length n)
 
+-- all functions only take one argument currying
+
+dropWhileIsTwo :: [Int] -> [Int]
+dropWhileIsTwo = dropWhile (== 2)
+
+niceSum :: [Int] -> Int
+niceSum xs = foldl (+) 0 xs
+
+addThree :: [Int] -> [Int]
+addThree xs = map (+3) xs
+
+-- as pattern
+
+suffixes :: [a] -> [[a]]
+suffixes xs@(_ :tail) = xs : suffixes tail
+suffixes _ = []
+
+add x y = x + y
+addInfix x y = x `add` y
+
